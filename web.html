@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Photography Webpage</title>
+    <style>
+     nav {
+             background-image: linear-gradient(red, yellow);
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        body {
+            font-family: Arial, sans-serif;
+             background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 45%, rgba(0,212,255,1) 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: o 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+	width: 150%;
+	heigth: autho%;
+	column-gap: 80px;
+             box-shadow: 10px 16px 16px #ffffff;
+            transform: scale(1.05);
+        }
+        #fullsereen-overlay
+	{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ffffff;
+	align-items: center;
+	justifi-content: center;
+	z-index: 1000;
+	}
+        #fullsereen-overlay img
+	{
+	max-width: 90%;
+	max-height: 90%;
+	}
+        #fullsereen-overlay span
+	{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 30px;
+	color: white;
+	cursor: pointer;
+	}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="D:\webpage\new.html">Home</a>
+        <a href="D:\webpage\about.html">About</a>
+        <a href="D:\webpage\web.html">photo Gallery</a>
+        <a href="D:\webpage\com.html">Contact</a>
+    </nav>
+
+<header>
+    <h1>Photography Gallery</h1>
+</header>
+<main>
+    <div class="gallery">
+        <!-- Example photos (replace URLs with actual image paths) -->
+        <img src="v.png" alt="Photo 1" onclick="openFullscreen(this)">
+        <img src="r.webp" alt="Photo 2" onclick="openFullscreen(this)">
+        <img src="v.png" alt="Photo 3" onclick="openFullscreen(this)">
+        <img src="r.webp" alt="Photo 4" onclick="openFullscreen(this)">
+        <img src="v.png" alt="Photo 5" onclick="openFullscreen(this)">
+        <img src="r.webp" alt="Photo 6" onclick="openFullscreen(this)">
+    </div>
+<div id="fullscreen-overlay" onclick="closeFullscreen()">
+<span>&times;</span>
+<img src="" alt="Full Screen">
+<script>
+function openFullscreen(image)
+{
+const overlay = document.getElementById("fullscreen-overlay");
+const fullscreenImage = overlay.querySelector("img");
+fullscreenImage.src = image.src;
+overlay.style.display ="flex";            
+}
+
+function closeFullscreen(){
+const overlay = document.getElementById("fullscreen-overlay");
+overlay.style.display = "none";
+}
+</script>
+</main>
+
+<footer>
+    <p>&copy; 2025 Photography Webpage</p>
+</footer>
+
+</body>
+</html>
